@@ -4,13 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biu do Piseiro</title>
+    <!-- Favicon link adicionado -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="./assets/css/style.css">
-      
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" xintegrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
+    <!-- Estilos para o Modal de Notícias -->
+    <style>
+        .modal-overlay {
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+        /* Adiciona estilos para o conteúdo do artigo dentro do modal */
+        .prose {
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+        .prose p {
+            margin-bottom: 1.25em;
+        }
+        .prose h1, .prose h2, .prose h3 {
+            font-weight: 600;
+            margin-bottom: 0.5em;
+            margin-top: 1.5em;
+        }
+        .prose h1 { font-size: 2.25rem; }
+        .prose h2 { font-size: 1.75rem; }
+        .prose h3 { font-size: 1.25rem; }
+        .prose ul {
+            list-style-type: disc;
+            padding-left: 1.5em;
+        }
+    </style>
 </head>
 <body class="text-gray-800">
     <!-- Navbar -->
@@ -25,16 +55,16 @@
                  <a href="#noticia" class="hover:text-amber-700">Notícias</a>
             </div>
             <button class="md:hidden" id="menu-btn">
-                <i data-feather="menu"></i>
+                <i data-feather="menu" class="text-white"></i>
             </button>
         </div>
         <!-- Mobile Menu -->
         <div class="bg-mobile md:hidden hidden bg-white w-full py-2 px-4" id="mobile-menu">
-            <a href="#musicas" class="block py-2 hover:text-amber-700">Músicas</a>
-            <a href="#shows" class="block py-2 hover:text-amber-700">Agenda</a>
-            <a href="#galeria" class="block py-2 hover:text-amber-700">Galeria</a>
-            <a href="#biografia" class="block py-2 hover:text-amber-700">Biografia</a>
-             <a href="#noticia" class="hover:text-amber-700">Notícias</a>
+            <a href="#musicas" class="block py-2 hover:text-amber-700 text-gray-800">Músicas</a>
+            <a href="#shows" class="block py-2 hover:text-amber-700 text-gray-800">Agenda</a>
+            <a href="#galeria" class="block py-2 hover:text-amber-700 text-gray-800">Galeria</a>
+            <a href="#biografia" class="block py-2 hover:text-amber-700 text-gray-800">Biografia</a>
+             <a href="#noticia" class="block py-2 hover:text-amber-700 text-gray-800">Notícias</a>
         </div>
     </nav>
 
@@ -76,10 +106,10 @@
                     <p class="text-gray-600 mb-6">Disponível em todas as plataformas digitais</p>
                     <div class="flex flex-wrap justify-center md:justify-start space-x-4">
                         <a href="https://open.spotify.com/track/2HXSabWDwe1L4Utfljx18C" target="_blank" class="bg-black hover:bg-green-600 text-white px-6 py-3 rounded-full flex items-center mb-4">
-                            <i class="fa-brands fa-spotify"></i>Ouvir no Spotify
+                            <i class="fa-brands fa-spotify me-2"></i>Ouvir no Spotify
                         </a>
                         <a href="https://www.youtube.com/watch?v=D_vKe2EyNqE" target="_blank" class="bg-black hover:bg-red-700 text-white px-6 py-3 rounded-full flex items-center mb-4">
-                            <i class="fa-brands fa-youtube"></i> Ver no YouTube
+                            <i class="fa-brands fa-youtube me-2"></i> Ver no YouTube
                         </a>
                     </div>
                 </div>
@@ -100,10 +130,10 @@
                         <h3 class="font-bold text-lg mb-2">Ela Quer Me Provocar</h3>
                         <div class="flex justify-between">
                             <a href="https://open.spotify.com/track/4uRwf4ZxUOnjd8RkqmwbNb" target="_blank" class="text-green-500 hover:text-green-700">
-                                <i class="fa-brands fa-spotify"></i> Spotify
+                                <i class="fa-brands fa-spotify me-1"></i> Spotify
                             </a>
                             <a href="https://www.youtube.com/watch?v=0jFQmbkaLH4&list=RD0jFQmbkaLH4&start_radio=1" target="_blank" class="text-red-500 hover:text-red-700">
-                                <i class="fa-brands fa-youtube"></i> YouTube 
+                                <i class="fa-brands fa-youtube me-1"></i> YouTube 
                             </a>
                         </div>
                     </div>
@@ -116,10 +146,10 @@
                         <h3 class="font-bold text-lg mb-2">Só Volto Segunda Feira</h3>
                         <div class="flex justify-between">
                             <a href="https://open.spotify.com/track/1lYoCbgNun3inkWFHDrOrD" target="_blank" class="text-green-500 hover:text-green-700">
-                                <i class="fa-brands fa-spotify"></i> Spotify
+                                <i class="fa-brands fa-spotify me-1"></i> Spotify
                             </a>
                             <a href="https://www.youtube.com/watch?v=A2karyiaWpc" target="_blank" class="text-red-500 hover:text-red-700">
-                                <i class="fa-brands fa-youtube"></i> YouTube
+                                <i class="fa-brands fa-youtube me-1"></i> YouTube
                             </a>
                         </div>
                     </div>
@@ -132,10 +162,10 @@
                         <h3 class="font-bold text-lg mb-2">After do Piseiro</h3>
                         <div class="flex justify-between">
                             <a href="https://open.spotify.com/track/7rWSyT6eURnUQQwLVnsZWs" target="_blank" class="text-green-500 hover:text-green-700">
-                                <i class="fa-brands fa-spotify"></i> Spotify
+                                <i class="fa-brands fa-spotify me-1"></i> Spotify
                             </a>
                             <a href="https://www.youtube.com/watch?v=-eYGUa1M8Kk" target="_blank" class="text-red-500 hover:text-red-700">
-                                <i class="fa-brands fa-youtube"></i> YouTube
+                                <i class="fa-brands fa-youtube me-1"></i> YouTube
                             </a>
                         </div>
                     </div>
@@ -148,10 +178,10 @@
                         <h3 class="font-bold text-lg mb-2">Vaqueiro de Ferro</h3>
                         <div class="flex justify-between">
                             <a href="https://open.spotify.com/track/6dOR9vh4DuzgaCL2A3mp3l" target="_blank" class="text-green-500 hover:text-green-700">
-                                <i class="fa-brands fa-spotify"></i> Spotify
+                                <i class="fa-brands fa-spotify me-1"></i> Spotify
                             </a>
                             <a href="https://www.youtube.com/watch?v=GaXRktukWJI" target="_blank" class="text-red-500 hover:text-red-700">
-                                <i class="fa-brands fa-youtube"></i> YouTube
+                                <i class="fa-brands fa-youtube me-1"></i> YouTube
                             </a>
                         </div>
                     </div>
@@ -164,26 +194,25 @@
                         <h3 class="font-bold text-lg mb-2">Vidigal</h3>
                         <div class="flex justify-between">
                             <a href="https://open.spotify.com/track/3VMymCjj0vCqAg5PuCOqyF" target="_blank" class="text-green-500 hover:text-green-700">
-                                <i class="fa-brands fa-spotify"></i> Spotify
+                                <i class="fa-brands fa-spotify me-1"></i> Spotify
                             </a>
                             <a href="https://www.youtube.com/watch?v=t0VpQZDocOE" target="_blank" class="text-red-500 hover:text-red-700">
-                                <i class="fa-brands fa-youtube"></i> YouTube
+                                <i class="fa-brands fa-youtube me-1"></i> YouTube
                             </a>
                         </div>
                     </div>
                 </div>
-                <!-- Músicas 3-5 (similar structure) -->
-                <!-- ... -->
             </div>
         </div>
     </section>
 
   <!-- Agenda de Shows -->
 <section class="py-16 leather-texture text-white" id="shows">
-  <div class="container background-position-center h-[400px] mx-auto px-4">
+  <div class="container h-auto mx-auto px-4">
     <h2 class="text-3xl font-bold text-shadow text-center mb-12">AGENDA DE SHOWS</h2>
     <div id="agenda-container" class="max-w-3xl mx-auto text-center">
         <p class="text-xl">Carregando agenda...</p>
+    </div>
   </div>
 </section>
 
@@ -210,9 +239,6 @@
                       <div class="carousel-item flex-shrink-0 w-full">
                         <img src="./assets/images/fotobiu10.jpg" alt="Bastidores" class="w-full h-[700px] object-cover rounded-lg">
                     </div>
-                
-                    
-                  <!-- Mais fotos... -->
                 </div>
                 
                 <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full" id="prev-btn">
@@ -225,39 +251,29 @@
         </div>
     </section>
 
-   <div id="noticia">
-     <!-- Seção de Notícias -->
+   <!-- Seção de Notícias -->
+   <div id="noticia" class="py-16 bg-white">
+     <header class="shadow p-6 text-center mb-8">
+       <h1 class="text-4xl font-bold text-gray-800">Portal de Notícias</h1>
+       <p class="text-gray-600">As últimas notícias do Cantor Biu do Piseiro</p>
+     </header>
 
-  <!-- Cabeçalho -->
-  <header class="bg-white shadow p-6 text-center">
-    <h1 class="text-4xl font-bold text-Black">Portal de Notícias</h1>
-    <p class="text-gray-600">As últimas notícias do Cantor Biu do Piseiro</p>
-  </header>
+     <section class="px-4 max-w-3xl mx-auto mb-8">
+       <form id="searchForm" class="flex flex-col sm:flex-row gap-4">
+         <input type="text" id="query" placeholder="Buscar notícias..." class="flex-grow px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-amber-500">
+         <button type="submit" class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-2 rounded-full">Buscar</button>
+       </form>
+     </section>
 
-  <!-- Área de busca -->
-  <section class="py-8 px-4 max-w-3xl mx-auto">
-    <form id="searchForm" class="flex gap-4">
-      <input type="text" id="query" placeholder="Buscar notícias..." class="flex-grow px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-amber-500">
-      <button type="submit" class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-2 rounded-full">Buscar</button>
-    </form>
-  </section>
+     <section id="newsContainer" class="px-4 max-w-5xl mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 py-8">
+       <p class="text-center text-xl col-span-full text-gray-500">Carregando notícias...</p>
+     </section>
 
-  <!-- Resultados -->
-  <section id="newsContainer" class="px-4 max-w-5xl mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 py-8">
-    <!-- Notícias serão inseridas aqui -->
-  </section>
-
-  <!-- Rodapé -->
-  <footer class="bg-white text-center py-6 mt-12 border-t">
-    
-  </footer>
-
+     <footer class="bg-white text-center py-6 mt-12 border-t"></footer>
    </div>
 
-
-
     <!-- Newsletter -->
-    <section class="py-16 bg-gray-100">
+    <!--<section class="py-16 bg-gray-100">
         <div class="container mx-auto px-4 max-w-3xl text-center">
             <h2 class="text-3xl font-bold mb-6">RECEBA NOVIDADES</h2>
             <p class="mb-8">Cadastre-se para receber informações sobre shows, lançamentos e novidades</p>
@@ -271,6 +287,7 @@
             </form>
         </div>
     </section>
+-->
 
     <!-- Biografia -->
     <section class="py-16 bg-white" id="biografia">
@@ -283,29 +300,27 @@
                 </div>
                 <div class="md:w-2/3 md:pl-12">
                     <p class="mb-4">Biu do Piseiro, nome artístico de Guilherme Alexandre, é um cantor e produtor desses remixes de pisadinha, uma inovação do forró.  Ele nasceu em Campina Grande, mas cresceu na zona rural de Fagundes, no agreste da Paraíba.</p>
-                    <p class="mb-4">Suas releituras de “Vem me satisfazer”, “Surtada” e outros funks ainda não estão no ranking principal, de músicas mais tocadas no país. Mas elas já se destacam na lista de virais, que ganham audiência mais rapidamente. Nas redes sociais muita gente fez sucesso ao som dele, como a ex-participante de reality Juliette Freire e o casal Tierry e Gabi Martins.
-
-</p>
+                    <p class="mb-4">Suas releituras de “Vem me satisfazer”, “Surtada” e outros funks ainda não estão no ranking principal, de músicas mais tocadas no país. Mas elas já se destacam na lista de virais, que ganham audiência mais rapidamente. Nas redes sociais muita gente fez sucesso ao som dele, como a ex-participante de reality Juliette Freire e o casal Tierry e Gabi Martins.</p>
                     <p>Como compositor paraibano de forró e piseiro e de estilos musicais populares no nordeste do Brasil, sua  popularidade e suas músicas se  misturam aos  elementos tradicionais do forró com ritmos modernos, típicos do piseiro, e letras que falam do cotidiano e das vivências do povo nordestino. A música de Biu do Piseiro geralmente é animada e dançante, atraindo muitos fãs que apreciam o estilo contagiante e a energia de suas apresentações. </p>
                 </div>
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div class="bg-gray-100 p-4 rounded-lg">
-                    <div class="text-3xl font-bold text-amber-700">50M+</div>
+                    <div class="text-3xl font-bold text-amber-700">350M+</div>
                     <div class="text-gray-600">Streams</div>
                 </div>
                 <div class="bg-gray-100 p-4 rounded-lg">
-                    <div class="text-3xl font-bold text-amber-700">500+</div>
+                    <div class="text-3xl font-bold text-amber-700">1000+</div>
                     <div class="text-gray-600">Shows</div>
                 </div>
                 <div class="bg-gray-100 p-4 rounded-lg">
-                    <div class="text-3xl font-bold text-amber-700">5+</div>
+                    <div class="text-3xl font-bold text-amber-700">10+</div>
                     <div class="text-gray-600">Músicas Populares</div>
                 </div>
                 <div class="bg-gray-100 p-4 rounded-lg">
-                    <div class="text-3xl font-bold text-amber-700">2</div>
-                    <div class="text-gray-600">Prêmios</div>
+                    <div class="text-3xl font-bold text-amber-700">800MIL+</div>
+                    <div class="text-gray-600">Ouvintes Mensais</div>
                 </div>
             </div>
         </div>
@@ -347,59 +362,151 @@
         </div>
     </footer>
 
+    <!-- ====================================================== -->
+    <!--     HTML DO MODAL (POP-UP) DE NOTÍCIAS (ESCONDIDO)     -->
+    <!-- ====================================================== -->
+    <div id="news-modal" class="modal-overlay fixed inset-0 z-[100] bg-black bg-opacity-75 flex items-center justify-center p-4 hidden" onclick="closeNewsModal()">
+        <div class="modal-content bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 id="modal-title" class="text-2xl font-bold text-gray-800"></h3>
+                <button id="modal-close-btn" class="text-gray-500 hover:text-gray-800 text-3xl" onclick="closeNewsModal()">&times;</button>
+            </div>
+            <div id="modal-body" class="p-6 prose max-w-none">
+                <!-- Conteúdo do artigo será inserido aqui -->
+            </div>
+        </div>
+    </div>
+    <!-- ====================================================== -->
+
+    <!-- Scripts da sua equipe (menu, galeria, etc.) -->
     <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/noticia.js"></script>
 
     
+    <!-- ====================================================== -->
+    <!--    NOSSO NOVO SCRIPT DE API (PARA SHOWS E NOTÍCIAS)    -->
+    <!-- ====================================================== -->
     <script>
+        // ATENÇÃO: Altere esta URL para o seu endereço do PythonAnywhere em produção
+        // const API_BASE_URL = 'https://biudopiseiro.pythonanywhere.com';
+        const API_BASE_URL = 'http://127.0.0.1:5000'; // Use o servidor local para testar
+
+        // --- Funções do Modal de Notícias ---
+        const newsModal = document.getElementById('news-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        
+        function openNewsModal(title, content) {
+            if (!newsModal || !modalTitle || !modalBody) return;
+            modalTitle.textContent = title;
+            modalBody.innerHTML = content;
+            newsModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeNewsModal() {
+            if (!newsModal) return;
+            newsModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
-            // ***** MUITO IMPORTANTE: ATUALIZE ESTA URL *****
-            // Use a URL real da sua aplicação no PythonAnywhere
-            const apiUrl = 'https://biudopiseiro.pythonanywhere.com/api/proximos-shows';
             
-            const agendaContainer = document.getElementById('agenda-container');
+            // --- 1. FUNÇÃO PARA CARREGAR A AGENDA DE SHOWS ---
+            function loadShows() {
+                const apiUrlShows = `${API_BASE_URL}/api/proximos-shows`;
+                const agendaContainer = document.getElementById('agenda-container');
+                if (!agendaContainer) return;
 
-            fetch(apiUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('A resposta da rede não foi bem-sucedida.');
-                    }
-                    return response.json();
-                })
-                .then(shows => {
-                    // Limpa a mensagem de "Carregando..."
-                    agendaContainer.innerHTML = ''; 
-                    
-                    if (shows.length === 0) {
-                        agendaContainer.innerHTML = '<p class="text-xl">Nenhum show confirmado no momento. Volte em breve!</p>';
-                        return;
-                    }
-
-                    // Cria o HTML para cada show retornado pela API
-                    shows.forEach(show => {
-                        const showElement = document.createElement('div');
-                        // Usamos as classes do Tailwind que já existem no seu site
-                        showElement.className = 'py-4 border-b border-white/20'; 
-                        
-                        showElement.innerHTML = `
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <h4 class="text-xl font-bold">${show.eventName}</h4>
-                                    <p class="text-white-300">${show.showDate} - ${show.city}/${show.state}</p>
+                fetch(apiUrlShows)
+                    .then(response => {
+                        if (!response.ok) { throw new Error('A resposta da rede não foi bem-sucedida.'); }
+                        return response.json();
+                    })
+                    .then(shows => {
+                        agendaContainer.innerHTML = ''; 
+                        if (shows.length === 0) {
+                            agendaContainer.innerHTML = '<p class="text-xl text-center">Nenhum show confirmado no momento. Volte em breve!</p>';
+                            return;
+                        }
+                        shows.forEach(show => {
+                            const showElement = document.createElement('div');
+                            showElement.className = 'py-4 border-b border-white/20 text-center md:text-left'; 
+                            showElement.innerHTML = `
+                                <div class="flex flex-col md:flex-row justify-between items-center">
+                                    <div>
+                                        <h4 class="text-xl font-bold text-white">${show.eventName}</h4>
+                                        <p class="text-gray-300">${show.showDate} - ${show.city}/${show.state}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        `;
-                        agendaContainer.appendChild(showElement);
+                            `;
+                            agendaContainer.appendChild(showElement);
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Erro ao buscar a agenda:', error);
+                        agendaContainer.innerHTML = '<p class="text-xl text-red-400 text-center">Não foi possível carregar a agenda. Tente novamente.</p>';
                     });
-                })
-                .catch(error => {
-                    console.error('Erro ao buscar a agenda:', error);
-                    agendaContainer.innerHTML = '<p class="text-xl text-red-400">Não foi possível carregar a agenda. Tente novamente mais tarde.</p>';
-                });
+            }
+
+            // --- 2. FUNÇÃO PARA CARREGAR AS NOTÍCIAS ---
+            function loadNews() {
+                const apiUrlNews = `${API_BASE_URL}/api/noticias`;
+                const newsContainer = document.getElementById('newsContainer');
+                if (!newsContainer) return; 
+
+                fetch(apiUrlNews)
+                    .then(response => response.json())
+                    .then(articles => {
+                        if (articles.length === 0) {
+                            newsContainer.innerHTML = '<p class="text-center text-xl col-span-full text-gray-500">Nenhuma notícia publicada no momento.</p>';
+                            return;
+                        }
+                        newsContainer.innerHTML = ''; 
+                        articles.forEach(article => {
+                            const imageUrl = article.image_url ? article.image_url : 'https://placehold.co/600x400/e2e8f0/9ca3af?text=Notícia';
+
+                            const articleCard = document.createElement('div');
+                            articleCard.className = "bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer";
+                            
+                            articleCard.innerHTML = `
+                                <img src="${imageUrl}" alt="Imagem de destaque da notícia" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <h3 class="font-bold text-xl mb-2 text-gray-800">${article.title}</h3>
+                                    <p class="text-gray-600 text-sm">${article.publication_date}</p>
+                                </div>
+                            `;
+
+                            if (article.source_link_url) {
+                                const linkElement = document.createElement('a');
+                                linkElement.href = article.source_link_url;
+                                linkElement.target = "_blank";
+                                linkElement.appendChild(articleCard);
+                                newsContainer.appendChild(linkElement);
+                            } else if (article.content) {
+                                articleCard.addEventListener('click', () => {
+                                    openNewsModal(article.title, article.content);
+                                });
+                                newsContainer.appendChild(articleCard);
+                            }
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Erro ao buscar notícias:', error);
+                        newsContainer.innerHTML = '<p class="text-center text-xl col-span-full text-red-500">Não foi possível carregar as notícias. Tente novamente.</p>';
+                    });
+            }
+
+            // --- 3. INICIA AS DUAS FUNÇÕES ---
+            loadShows();
+            loadNews();
+
+            // --- 4. RE-EXECUTA O FEATHER ICONS ---
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
         });
     </script>
-    </body>
-</html>
 
 </body>
 </html>
+
